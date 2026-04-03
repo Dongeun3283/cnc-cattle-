@@ -47,8 +47,6 @@ section{padding:3rem 1.5rem}
 .career-label{font-size:.55rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c8a84e;margin-bottom:.4rem}
 .at p{font-size:.8rem;color:#3a5269;margin-bottom:.5rem}
 .at strong{color:#1b2a3d}
-
-/* Career Timeline */
 .career-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
 .career-box{background:#f8f7f4;border-radius:10px;padding:1.2rem;border-left:3px solid #c8a84e}
 .career-box.past{border-left-color:#8ba4b8}
@@ -60,15 +58,11 @@ section{padding:3rem 1.5rem}
 .career-box ul li{font-size:.68rem;color:#3a5269;padding-left:.7rem;position:relative}
 .career-box ul li::before{content:'';width:3px;height:3px;background:#c8a84e;border-radius:50%;position:absolute;left:0;top:.45rem}
 .career-box.past ul li::before{background:#8ba4b8}
-
-/* Awards */
 .awards{margin-top:1rem;background:linear-gradient(135deg,#1b2a3d,#2e4258);border-radius:10px;padding:1.2rem;color:#fff}
 .awards h4{font-size:.72rem;font-weight:700;color:#d4b87a;margin-bottom:.5rem}
 .awards ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
 .awards ul li{font-size:.68rem;color:rgba(255,255,255,.75);padding-left:.7rem;position:relative}
-.awards ul li::before{content:'🏆';position:absolute;left:-.1rem;top:0;font-size:.55rem}
-
-/* International */
+.awards ul li::before{content:'\1F3C6';position:absolute;left:-.1rem;top:0;font-size:.55rem}
 .intl{margin-top:1rem;display:flex;gap:.8rem;flex-wrap:wrap}
 .intl-item{background:#f0f4f7;border-radius:8px;padding:.6rem .9rem;flex:1;min-width:200px}
 .intl-item b{font-size:.68rem;color:#1b2a3d;display:block;margin-bottom:.15rem}
@@ -104,7 +98,9 @@ section{padding:3rem 1.5rem}
 #contact{background:linear-gradient(170deg,#2e4258,#141f2e);color:#fff;text-align:center}
 #contact .sl{color:#d4b87a}
 #contact .st{color:#fff}
-.ce{display:inline-block;margin-bottom:1rem;font-size:1rem;font-weight:700;color:#d4b87a;text-decoration:none;border-bottom:2px solid rgba(212,184,122,.3);padding-bottom:.1rem}
+.inquiry-btn{display:inline-block;margin-bottom:1.5rem;padding:.8rem 2.5rem;background:#c8a84e;color:#1b2a3d;font-size:.95rem;font-weight:700;border-radius:8px;text-decoration:none;transition:all .3s;letter-spacing:.5px}
+.inquiry-btn:hover{background:#d4b87a;transform:translateY(-2px);box-shadow:0 4px 15px rgba(200,168,78,.4)}
+.contact-email{display:block;margin-bottom:1.2rem;font-size:.9rem;font-weight:600;color:#d4b87a;text-decoration:none}
 .cg{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
 .ci{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .9rem;min-width:150px;text-align:left}
 .cl{font-size:.48rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d4b87a;margin-bottom:.1rem}
@@ -177,10 +173,9 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
   </div>
   <div class="at">
     <p><strong>CNC</strong>(씨앤씨) = 반추동물 영양 전문 컨설팅</p>
-    <p><strong>CVB</strong> · <strong>NRC/NASEM</strong> · 한우사양표준 2022 통합 영양설계</p>
+    <p><strong>CVB</strong> &middot; <strong>NRC/NASEM</strong> &middot; 한우사양표준 2022 통합 영양설계</p>
     <p><strong>GN/LN</strong> 프레임워크 한우 비육 현장 적용</p>
-    <p>디지털 사료진단 도구 · <strong>EPD/KPN</strong> 기반 개체별 맞춤 사양</p>
-
+    <p>디지털 사료진단 도구 &middot; <strong>EPD/KPN</strong> 기반 개체별 맞춤 사양</p>
     <div class="career-grid">
       <div class="career-box past">
         <h4><span class="badge badge-past">전직</span> 주요 경력</h4>
@@ -205,7 +200,6 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
         </ul>
       </div>
     </div>
-
     <div class="awards">
       <h4>수상 / 기술지원 실적</h4>
       <ul>
@@ -213,7 +207,6 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
         <li>제24회 한우능력경진대회 대통령상 TMR 기술지원 (목무신축협, 2021)</li>
       </ul>
     </div>
-
     <div class="intl">
       <div class="intl-item">
         <b>네덜란드 ptc+ 낙농연수</b>
@@ -238,12 +231,12 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
   <div class="sc">
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="30" width="5" height="5"/><rect x="12" y="24" width="5" height="11"/><rect x="19" y="17" width="5" height="18"/><rect x="26" y="9" width="5" height="26"/><path d="M7 8 L16 15 L23 7 L34 3" stroke-width="2"/><path d="M29 3 L34 3 L34 8"/></svg>
     <h3>한우 비육 TMR 설계</h3>
-    <p>단계별 TMR 배합 · GN/LN 최적화<br>CVB 기반 현장 진단</p>
+    <p>단계별 TMR 배합 &middot; GN/LN 최적화<br>CVB 기반 현장 진단</p>
   </div>
   <div class="sc">
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 32 L10 16 Q10 6 20 6 Q30 6 30 16 L30 32"/><path d="M10 22 L30 22"/><ellipse cx="20" cy="27" rx="6" ry="4"/><circle cx="16" cy="27" r="1.2" fill="currentColor"/><circle cx="24" cy="27" r="1.2" fill="currentColor"/></svg>
     <h3>낙농 정밀 영양관리</h3>
-    <p>DHI 분석 · 비유단계별 설계<br>대사장애 예방</p>
+    <p>DHI 분석 &middot; 비유단계별 설계<br>대사장애 예방</p>
   </div>
   <div class="sc">
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="12" width="28" height="24" rx="2"/><path d="M6 20 L34 20"/><line x1="17" y1="12" x2="17" y2="36"/><rect x="10" y="4" width="20" height="8" rx="2"/></svg>
@@ -258,12 +251,12 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
   <div class="sc">
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M4 15 L36 15"/><path d="M13 8 L13 32"/><line x1="17" y1="20" x2="32" y2="20"/><line x1="17" y1="25" x2="28" y2="25"/></svg>
     <h3>조합/사료회사 자문</h3>
-    <p>제품 개발 · 영업사원 교육<br>농가 기술지원</p>
+    <p>제품 개발 &middot; 영업사원 교육<br>농가 기술지원</p>
   </div>
   <div class="sc">
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M15 4 L15 8 L25 8 L25 4"/><line x1="13" y1="15" x2="27" y2="15"/><line x1="13" y1="20" x2="24" y2="20"/><polyline points="13 26 16 30 27 22"/></svg>
     <h3>디지털 진단 도구</h3>
-    <p>TMR 시뮬레이터 · 요석증 분석<br>THI 열스트레스 지수</p>
+    <p>TMR 시뮬레이터 &middot; 요석증 분석<br>THI 열스트레스 지수</p>
   </div>
 </div>
 </div></section>
@@ -308,7 +301,9 @@ footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color
 
 <section id="contact"><div class="sec">
 <div class="sl">CONTACT</div><div class="st">컨설팅 문의</div>
-<a href="mailto:shindongeun@naver.com" class="ce">shindongeun@naver.com</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScWuDKmAWYD12C_lCzR_g-_JvrexA_pxcvAC4FzevHsW4cUKA/viewform" target="_blank" class="inquiry-btn">&#x1F4DD; 온라인 컨설팅 문의하기</a>
+<br>
+<a href="mailto:shindongeun&#64;naver.com" class="contact-email">shindongeun&#64;naver.com</a>
 <div class="cg">
   <div class="ci"><div class="cl">MOBILE</div><div class="cv">010-2809-3803</div></div>
   <div class="ci"><div class="cl">TEL/FAX</div><div class="cv">031) 213-3803</div></div>
