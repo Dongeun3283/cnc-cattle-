@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNC Cattle and Consulting</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Noto Sans KR',sans-serif;color:#1b2a3d;background:#f5f3ef;line-height:1.7}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(27,42,61,.96);backdrop-filter:blur(12px)}
+.ni{max-width:1000px;margin:0 auto;padding:.6rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.nb{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff}
+.nbg{width:32px;height:32px;background:#c8a84e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.7rem;color:#1b2a3d}
+.nn{font-weight:700;font-size:.85rem}
+.nl{display:flex;gap:1.5rem;list-style:none}
+.nl a{color:rgba(255,255,255,.6);font-size:.72rem;text-decoration:none;font-weight:500}
+.nl a:hover{color:#d4b87a}
+
+.hero{background:linear-gradient(170deg,#c2bbb0 0%,#c2bbb0 16%,#2e4258 16%,#243549 60%,#1b2a3d 100%);padding:7rem 1.5rem 4rem;text-align:center;color:#fff}
+.hero-badge{display:inline-block;background:#c8a84e;color:#1b2a3d;font-weight:800;font-size:1.8rem;padding:.5rem 1.2rem;border-radius:10px;margin-bottom:1rem;letter-spacing:2px}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:300;line-height:1.4;color:#d4b87a;margin-bottom:1rem}
+.hero-desc{font-size:.88rem;color:rgba(255,255,255,.55);max-width:500px;margin:0 auto 2rem}
+.hero-items{display:flex;flex-direction:column;gap:.8rem;max-width:460px;margin:0 auto;text-align:left}
+.hero-item{display:flex;align-items:flex-start;gap:.8rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1rem}
+.hero-item svg{width:36px;height:36px;flex-shrink:0;color:rgba(255,255,255,.7)}
+.hero-item b{font-size:.82rem;color:#fff;display:block}
+.hero-item span{font-size:.7rem;color:rgba(255,255,255,.45)}
+.hero-name{margin-top:2rem;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.8)}
+
+section{padding:3rem 1.5rem}
+.sec{max-width:1000px;margin:0 auto}
+.sl{font-size:.55rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#96793a;margin-bottom:.2rem}
+.st{font-size:1.2rem;font-weight:800;margin-bottom:1rem}
+
+#about{background:#fff}
+.ar{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start}
+.ac{background:#1b2a3d;border-radius:12px;padding:1.3rem;color:#fff}
+.an{font-size:1.3rem;font-weight:800}
+.ae{font-size:.65rem;color:rgba(255,255,255,.45);margin-top:.1rem}
+.aro{font-size:.72rem;color:#d4b87a;font-weight:600;margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.al{list-style:none;margin-top:.8rem;display:flex;flex-direction:column;gap:.3rem}
+.al li{font-size:.7rem;color:rgba(255,255,255,.65);padding-left:.8rem;position:relative}
+.al li::before{content:'';width:3px;height:3px;background:#d4b87a;border-radius:50%;position:absolute;left:0;top:.5rem}
+.career-section{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.career-label{font-size:.55rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c8a84e;margin-bottom:.4rem}
+.at p{font-size:.8rem;color:#3a5269;margin-bottom:.5rem}
+.at strong{color:#1b2a3d}
+
+/* Career Timeline */
+.career-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.career-box{background:#f8f7f4;border-radius:10px;padding:1.2rem;border-left:3px solid #c8a84e}
+.career-box.past{border-left-color:#8ba4b8}
+.career-box h4{font-size:.72rem;font-weight:700;color:#1b2a3d;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.career-box h4 .badge{font-size:.5rem;font-weight:700;padding:.1rem .4rem;border-radius:3px;color:#fff}
+.badge-now{background:#c8a84e}
+.badge-past{background:#8ba4b8}
+.career-box ul{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+.career-box ul li{font-size:.68rem;color:#3a5269;padding-left:.7rem;position:relative}
+.career-box ul li::before{content:'';width:3px;height:3px;background:#c8a84e;border-radius:50%;position:absolute;left:0;top:.45rem}
+.career-box.past ul li::before{background:#8ba4b8}
+
+/* Awards */
+.awards{margin-top:1rem;background:linear-gradient(135deg,#1b2a3d,#2e4258);border-radius:10px;padding:1.2rem;color:#fff}
+.awards h4{font-size:.72rem;font-weight:700;color:#d4b87a;margin-bottom:.5rem}
+.awards ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.awards ul li{font-size:.68rem;color:rgba(255,255,255,.75);padding-left:.7rem;position:relative}
+.awards ul li::before{content:'🏆';position:absolute;left:-.1rem;top:0;font-size:.55rem}
+
+/* International */
+.intl{margin-top:1rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.intl-item{background:#f0f4f7;border-radius:8px;padding:.6rem .9rem;flex:1;min-width:200px}
+.intl-item b{font-size:.68rem;color:#1b2a3d;display:block;margin-bottom:.15rem}
+.intl-item span{font-size:.6rem;color:#607d97}
+
+#services{background:#f5f3ef}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.sc{background:#fff;border-radius:10px;padding:1.2rem;text-align:center;border:1px solid rgba(27,42,61,.05)}
+.sc svg{width:40px;height:40px;margin:0 auto .5rem;display:block;color:#2e4258}
+.sc h3{font-size:.8rem;font-weight:700;margin-bottom:.2rem}
+.sc p{font-size:.65rem;color:#607d97;line-height:1.5}
+
+#framework{background:#1b2a3d;color:#fff}
+#framework .sl{color:#d4b87a}
+#framework .st{color:#fff}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.fi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.8rem}
+.ft{font-size:.48rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d4b87a;margin-bottom:.2rem}
+.fn{font-size:.75rem;font-weight:700;margin-bottom:.1rem}
+.fd{font-size:.6rem;color:rgba(255,255,255,.4);line-height:1.4}
+
+#clients{background:#fff}
+.tg{display:flex;flex-wrap:wrap;gap:.4rem}
+.t{background:#f0f4f7;border-radius:100px;padding:.35rem .9rem;font-size:.75rem;font-weight:500;color:#2e4258}
+
+#education{background:#f5f3ef}
+.eb{background:#fff;border-radius:10px;padding:1.2rem;border:1px solid rgba(27,42,61,.05)}
+.eb h3{font-size:.85rem;font-weight:700;margin-bottom:.2rem}
+.eb p{font-size:.72rem;color:#607d97}
+.et{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.etg{background:#f0f4f7;border-radius:4px;padding:.15rem .45rem;font-size:.6rem;font-weight:600;color:#2e4258}
+
+#contact{background:linear-gradient(170deg,#2e4258,#141f2e);color:#fff;text-align:center}
+#contact .sl{color:#d4b87a}
+#contact .st{color:#fff}
+.ce{display:inline-block;margin-bottom:1rem;font-size:1rem;font-weight:700;color:#d4b87a;text-decoration:none;border-bottom:2px solid rgba(212,184,122,.3);padding-bottom:.1rem}
+.cg{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.ci{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .9rem;min-width:150px;text-align:left}
+.cl{font-size:.48rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d4b87a;margin-bottom:.1rem}
+.cv{font-size:.72rem;color:rgba(255,255,255,.7);line-height:1.4}
+
+footer{background:#0e1720;padding:.8rem;text-align:center;font-size:.55rem;color:rgba(255,255,255,.2)}
+
+@media(max-width:800px){
+  .ar{grid-template-columns:1fr}
+  .sg{grid-template-columns:1fr 1fr}
+  .fg{grid-template-columns:1fr 1fr}
+  .career-grid{grid-template-columns:1fr}
+  .nl{display:none}
+}
+@media(max-width:500px){
+  .sg,.fg{grid-template-columns:1fr}
+  .cg{flex-direction:column;align-items:center}
+  .intl{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="ni">
+<a href="#" class="nb"><div class="nbg">CNC</div><div class="nn">CNC Cattle &amp; Consulting</div></a>
+<ul class="nl"><li><a href="#about">소개</a></li><li><a href="#services">서비스</a></li><li><a href="#framework">기술체계</a></li><li><a href="#clients">고객사</a></li><li><a href="#contact">문의</a></li></ul>
+</div></nav>
+
+<section class="hero">
+  <div class="hero-badge">CNC</div>
+  <h1>Feeding Innovation,<br>Growing Profit</h1>
+  <p class="hero-desc">과학적 사양관리로 축산 현장의 가치를 높입니다</p>
+  <div class="hero-items">
+    <div class="hero-item">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="28" width="5" height="5"/><rect x="11" y="22" width="5" height="11"/><rect x="18" y="15" width="5" height="18"/><rect x="25" y="7" width="5" height="26"/><path d="M6 8 L15 14 L22 6 L32 3" stroke-width="2"/><path d="M27 3 L32 3 L32 8"/></svg>
+      <div><b>축산 농가 현장 방문 맞춤형 사료 컨설팅</b></div>
+    </div>
+    <div class="hero-item">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="18" cy="18" r="13"/><path d="M18 8 L18 18 L26 22"/><circle cx="18" cy="18" r="2" fill="currentColor"/></svg>
+      <div><b>NRC, NASEM, CVB 기반 과학적 영양 설계</b></div>
+    </div>
+    <div class="hero-item">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="28" height="24" rx="3"/><path d="M4 14 L32 14"/><path d="M12 6 L12 30"/><line x1="16" y1="20" x2="28" y2="20"/><line x1="16" y1="25" x2="24" y2="25"/></svg>
+      <div><b>TMR 배합설계, 메탄 저감, 정밀 사료 설계</b></div>
+    </div>
+  </div>
+  <div class="hero-name">Dr. Shin Dong-eun (CNC)</div>
+</section>
+
+<section id="about"><div class="sec">
+<div class="sl">ABOUT</div><div class="st">대표 소개</div>
+<div class="ar">
+  <div class="ac">
+    <div class="an">신 동 은</div>
+    <div class="ae">Dr. Shin Dong-Eun</div>
+    <div class="aro">CNC 대표</div>
+    <ul class="al">
+      <li>CNC Cattle &amp; Consulting 대표</li>
+      <li>반추동물 영양 현장 30년+</li>
+    </ul>
+    <div class="career-section">
+      <div class="career-label">현직</div>
+      <ul class="al">
+        <li>연암대학교 겸임교수</li>
+        <li>농협우리사료 / 농협사료 경남지사 품질자문</li>
+        <li>TMR연구회 이사</li>
+        <li>함평축협 / 광주축협 / 전남낙협 컨설팅</li>
+      </ul>
+    </div>
+  </div>
+  <div class="at">
+    <p><strong>CNC</strong>(씨앤씨) = 반추동물 영양 전문 컨설팅</p>
+    <p><strong>CVB</strong> · <strong>NRC/NASEM</strong> · 한우사양표준 2022 통합 영양설계</p>
+    <p><strong>GN/LN</strong> 프레임워크 한우 비육 현장 적용</p>
+    <p>디지털 사료진단 도구 · <strong>EPD/KPN</strong> 기반 개체별 맞춤 사양</p>
+
+    <div class="career-grid">
+      <div class="career-box past">
+        <h4><span class="badge badge-past">전직</span> 주요 경력</h4>
+        <ul>
+          <li>농협사료 R&amp;D 및 PM</li>
+          <li>서울우유 TMR협의회 전문위원</li>
+          <li>목우촌육우 / 경남브랜드 한우지예 기술고문</li>
+          <li>중국 코휘드사료 R&amp;D 이사 (2010~2011)</li>
+          <li>농촌진흥청 축산기술연구소 포닥연구원 (1999~2000)</li>
+          <li>뉴질랜드 링컨대학교 연구원 (2001)</li>
+        </ul>
+      </div>
+      <div class="career-box past">
+        <h4><span class="badge badge-past">전직</span> 기술자문 이력</h4>
+        <ul>
+          <li>서울경기한우조합</li>
+          <li>괴산증평축협 / 문경축협 / 밀양축협</li>
+          <li>부산우유 / 해남축협</li>
+          <li>지리산순한한우 / 영광축협</li>
+          <li>목무신축협 / 임실축협</li>
+          <li>전남낙협</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="awards">
+      <h4>수상 / 기술지원 실적</h4>
+      <ul>
+        <li>제17회 한우능력경진대회 대통령상 TMR 기술지원 (괴산증평축협, 2014)</li>
+        <li>제24회 한우능력경진대회 대통령상 TMR 기술지원 (목무신축협, 2021)</li>
+      </ul>
+    </div>
+
+    <div class="intl">
+      <div class="intl-item">
+        <b>네덜란드 ptc+ 낙농연수</b>
+        <span>2011</span>
+      </div>
+      <div class="intl-item">
+        <b>뉴질랜드 링컨대학교 연구원</b>
+        <span>2001</span>
+      </div>
+      <div class="intl-item">
+        <b>대학 강의</b>
+        <span>건국대 / 서울대 / 상지대 / 순천대 / 천안연암대</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section id="services"><div class="sec">
+<div class="sl">SERVICES</div><div class="st">컨설팅 서비스</div>
+<div class="sg">
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="30" width="5" height="5"/><rect x="12" y="24" width="5" height="11"/><rect x="19" y="17" width="5" height="18"/><rect x="26" y="9" width="5" height="26"/><path d="M7 8 L16 15 L23 7 L34 3" stroke-width="2"/><path d="M29 3 L34 3 L34 8"/></svg>
+    <h3>한우 비육 TMR 설계</h3>
+    <p>단계별 TMR 배합 · GN/LN 최적화<br>CVB 기반 현장 진단</p>
+  </div>
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 32 L10 16 Q10 6 20 6 Q30 6 30 16 L30 32"/><path d="M10 22 L30 22"/><ellipse cx="20" cy="27" rx="6" ry="4"/><circle cx="16" cy="27" r="1.2" fill="currentColor"/><circle cx="24" cy="27" r="1.2" fill="currentColor"/></svg>
+    <h3>낙농 정밀 영양관리</h3>
+    <p>DHI 분석 · 비유단계별 설계<br>대사장애 예방</p>
+  </div>
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="12" width="28" height="24" rx="2"/><path d="M6 20 L34 20"/><line x1="17" y1="12" x2="17" y2="36"/><rect x="10" y="4" width="20" height="8" rx="2"/></svg>
+    <h3>사료 배합설계</h3>
+    <p>CVB 362종 원료 DB<br>최소비용 배합 최적화</p>
+  </div>
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 4 C20 4 8 9 8 20 C8 30 20 36 20 36 C20 36 32 30 32 20 C32 9 20 4 20 4Z"/><circle cx="20" cy="14" r="2.5"/><path d="M15 20 C15 20 17 26 20 26 C23 26 25 20 25 20"/></svg>
+    <h3>KPN/EPD 유전능력</h3>
+    <p>1,907두 씨수소 DB<br>EBV 기반 MPI 산출</p>
+  </div>
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M4 15 L36 15"/><path d="M13 8 L13 32"/><line x1="17" y1="20" x2="32" y2="20"/><line x1="17" y1="25" x2="28" y2="25"/></svg>
+    <h3>조합/사료회사 자문</h3>
+    <p>제품 개발 · 영업사원 교육<br>농가 기술지원</p>
+  </div>
+  <div class="sc">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M15 4 L15 8 L25 8 L25 4"/><line x1="13" y1="15" x2="27" y2="15"/><line x1="13" y1="20" x2="24" y2="20"/><polyline points="13 26 16 30 27 22"/></svg>
+    <h3>디지털 진단 도구</h3>
+    <p>TMR 시뮬레이터 · 요석증 분석<br>THI 열스트레스 지수</p>
+  </div>
+</div>
+</div></section>
+
+<section id="framework"><div class="sec">
+<div class="sl">FRAMEWORK</div><div class="st">핵심 기술 체계</div>
+<div class="fg">
+  <div class="fi"><div class="ft">네덜란드</div><div class="fn">CVB 2021</div><div class="fd">VEVI/DVE/OEB<br>362종 원료 DB</div></div>
+  <div class="fi"><div class="ft">한우</div><div class="fn">GN/LN 진단</div><div class="fd">육성 30-36%<br>큰소 42-48% / 후기 48-52%</div></div>
+  <div class="fi"><div class="ft">한국</div><div class="fn">한우사양표준</div><div class="fd">2022 영양소 요구량<br>사양 프로그램</div></div>
+  <div class="fi"><div class="ft">미국</div><div class="fn">NRC / NASEM</div><div class="fd">수분섭취 모델<br>광물질 균형</div></div>
+  <div class="fi"><div class="ft">유전</div><div class="fn">KPN/EPD</div><div class="fd">1,907두 씨수소<br>MPI 산출</div></div>
+  <div class="fi"><div class="ft">낙농</div><div class="fn">DHI 분석</div><div class="fd">검정성적 PDF<br>자동 추출/분석</div></div>
+  <div class="fi"><div class="ft">품질</div><div class="fn">육색/DFD</div><div class="fd">리스크 스코어링<br>예방 프로토콜</div></div>
+  <div class="fi"><div class="ft">도구</div><div class="fn">시뮬레이터</div><div class="fd">TMR 진단 / 요석증<br>THI 열스트레스</div></div>
+</div>
+</div></section>
+
+<section id="clients"><div class="sec">
+<div class="sl">CLIENTS</div><div class="st">주요 고객사</div>
+<div class="tg">
+  <div class="t">농협우리사료 / 농협사료 경남지사</div>
+  <div class="t">함평축협</div>
+  <div class="t">광주축협</div>
+  <div class="t">전남낙농협동조합</div>
+  <div class="t">맨두팜스</div>
+  <div class="t">개별 한우/낙농 농가</div>
+</div>
+</div></section>
+
+<section id="education"><div class="sec">
+<div class="sl">EDUCATION</div><div class="st">교육 활동</div>
+<div class="eb">
+  <h3>대학 강의 및 교육</h3>
+  <p>연암대 겸임교수 (현) / 건국대, 서울대, 상지대, 순천대 시간강사 / 농민대상 강의</p>
+  <div class="et">
+    <span class="etg">단백질 대사</span><span class="etg">탄수화물 대사</span><span class="etg">BCS</span>
+    <span class="etg">송아지 관리</span><span class="etg">착유 시스템</span><span class="etg">Cow Signals</span><span class="etg">스마트 축산</span>
+  </div>
+</div>
+</div></section>
+
+<section id="contact"><div class="sec">
+<div class="sl">CONTACT</div><div class="st">컨설팅 문의</div>
+<a href="mailto:shindongeun@naver.com" class="ce">shindongeun@naver.com</a>
+<div class="cg">
+  <div class="ci"><div class="cl">MOBILE</div><div class="cv">010-2809-3803</div></div>
+  <div class="ci"><div class="cl">TEL/FAX</div><div class="cv">031) 213-3803</div></div>
+  <div class="ci"><div class="cl">ADDRESS</div><div class="cv">경기도 수원시 영통구 도청로 10<br>B동 939호 (광교센트럴푸르지오시티)<br>우) 16508</div></div>
+  <div class="ci"><div class="cl">MOBILE FAX</div><div class="cv">0508-926-3803</div></div>
+</div>
+</div></section>
+
+<footer>CNC Cattle and Consulting / CNC 대표 신동은</footer>
+
+</body>
+</html>
